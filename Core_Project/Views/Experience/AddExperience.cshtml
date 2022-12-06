@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form class="form-group" method="post">
+    <br />
+    <label>Deneyim Adı</label>
+    <input class="form-control" type="text" name="Name"  />
+    <br />
+    <label>Tarih Aralığı</label>
+    <input type="text" name="Date" class="form-control" />
+    <br />
+    <label>Resim Url</label>
+    <input type="text" name="ImageUrl" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    <br />
+    <input type="submit" value="Kaydet" class="btn btn-success"/>
+</form>
+

@@ -1,4 +1,4 @@
-﻿@model List<Skill>
+﻿@model List<Experience>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -6,7 +6,7 @@
 
 
 <div class="card-header border-0">
-    <h3 class="mb-0">Yetenek Tablosu</h3>
+    <h3 class="mb-0">Deneyim Listesi Tablosu</h3>
 </div>
 <div class="table-responsive">
     <table class="table align-items-center table-flush">
@@ -14,7 +14,7 @@
             <tr>
                 <th scope="col" class="sort" data-sort="name">#</th>
                 <th scope="col" class="sort" data-sort="budget">Yetenek İsmi</th>
-                <th scope="col" class="sort" data-sort="completion">Completion</th>
+                <th scope="col" class="sort" data-sort="completion">Tarih</th>
                 <th scope="col" class="sort" data-sort="status">Sil</th>
                 <th scope="col">Güncelle</th>
 
@@ -33,27 +33,23 @@
                         </div>
                     </th>
                     <td class="budget">
-                        @item.Title
+                        @item.Name
                     </td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <span class="completion mr-2">@item.Value</span>
-                            <div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;"></div>
-                                </div>
-                            </div>
+                            <span class="completion mr-2">@item.Date</span>
+                            
                         </div>
                     </td>
                     <td>
-                        
-                            <a class="btn btn-danger" href="~/Skill/DeleteSkill/@item.Id">Sil</a>
-                       
+
+                        <a class="btn btn-danger" href="~/Experience/DeleteExperience/@item.Id">Sil</a>
+
                     </td>
                     <td>
-                        
-                            <a class="btn btn-warning" href="~/Skill/UpdateSkill/@item.Id">Güncelle</a>
-                        
+
+                        <a class="btn btn-warning" href="~/Experience/UpdateExperience/@item.Id">Güncelle</a>
+
 
                     </td>
 
@@ -62,4 +58,5 @@
             }
         </tbody>
     </table>
+    <a href="~/Experience/AddExperience" class="btn btn-outline-darker">Yeni Deneyim Ekle</a>
 </div>
